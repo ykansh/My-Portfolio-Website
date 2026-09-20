@@ -1,17 +1,27 @@
 export const experiences = [
   {
-    id: "goodwin",
-    role: "Software & AI Developer",
-    company: "Goodwin",
+    id: "dot-exe",
+    role: "Team Lead & Software Engineer",
+    company: ".exe",
     location: "Indore, Madhya Pradesh, India",
     period: "2024 – Present",
-    description: "Leading hands-on development of internal AI integrations, business automation software, and robust full-stack product features.",
+    description: "Leading hands-on technical architecture, team sprints, Git-based workflows, and scalable AI/ML operations across hackathon projects and software development initiatives.",
     points: [
-      "Engineered intelligent workflow automation pipelines using Python and FastAPI, significantly reducing manual data processing overhead.",
-      "Collaborated on designing and integrating modern full-stack web applications with React and Next.js, connecting them to secure backend APIs and databases.",
-      "Researched, prototyped, and evaluated machine learning and generative AI workflows to solve core operational and business problems.",
-      "Maintained version-controlled deployment routines, automated API validation, and optimized application responsiveness across client platforms."
+      "Led a 4-person engineering team in agile sprints, orchestrating Git-based version control, system architecture, and code reviews across 3 hackathon projects.",
+      "Managed project architecture, code reviews, and Git-based collaborative development workflows to ensure high code quality and reliable deliveries.",
+      "Managed ML operations (MLOps), LLMOps pipelines, and scalable AI system architectures from preprocessing to cloud containerization.",
+      "Spearheaded technical problem formulation, model experimentation, and modular FastAPI service integrations."
     ],
-    technologies: ["Python", "AI/ML", "FastAPI", "React", "Next.js", "Supabase", "Git", "REST APIs"]
+    technologies: [
+      "Python",
+      "FastAPI",
+      "Kubernetes",
+      "Docker",
+      "AWS",
+      "MLflow",
+      "DVC",
+      "Git / GitHub",
+      "CI/CD"
+    ]
   }
 ];

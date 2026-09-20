@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, ArrowUpRight, Send } from 'lucide-react';
+import { Mail, Phone, ArrowUpRight, Send } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 import SectionHeader from './SectionHeader';
 import { profile } from '../data/profile';
@@ -13,6 +13,13 @@ export default function Contact() {
       label: 'Email',
       value: profile.email,
       href: `mailto:${profile.email}`,
+    },
+    {
+      id: 'phone',
+      icon: Phone,
+      label: 'Phone',
+      value: profile.phone,
+      href: `tel:${profile.phone.replace(/\s+/g, '')}`,
     },
     {
       id: 'github',

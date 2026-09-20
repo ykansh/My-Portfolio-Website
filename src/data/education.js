@@ -1,71 +1,59 @@
 export const education = {
   degree: "Bachelor of Technology — B.Tech",
   major: "Computer Science & Engineering",
-  specialization: "Artificial Intelligence & Machine Learning",
-  institution: "SKITM — Shiv Kumar Institute of Technology and Management",
+  specialization: "MLOps, LLMOps & Data Science",
+  institution: "Shivajirao Kadam Institute of Technology & Management (SKITM)",
   location: "Indore, Madhya Pradesh, India",
   period: "2024 – 2028",
-  description: "Comprehensive engineering curriculum emphasizing foundational computer science principles, core mathematical optimization, algorithm design, machine learning architectures, and modern software development.",
+  description: "Rigorous computer science curriculum combining systems programming, statistical modeling, machine learning, and scalable cloud architectures with deep practical focus on MLOps and LLMOps.",
   highlights: [
-    "Specialization coursework in Deep Learning, Computer Vision, and Predictive Analytics",
-    "Active builder creating real-world projects and participating in hackathons",
-    "Focus on production engineering: combining ML theory with robust full-stack software"
+    "Core coursework in Data Structures & Algorithms, Machine Learning, Deep Learning, and Cloud Systems",
+    "Specialized focus on production ML pipelines, container orchestration with Kubernetes, and MLOps tooling",
+    "Active technical leadership and team lead across college hackathons and collaborative developer sprints"
   ]
 };
 
 export const certifications = [
   {
-    id: "nptel-ds",
-    title: "Data Science for Engineers (Python)",
-    issuer: "NPTEL / SWAYAM",
+    id: "amu-ds",
+    title: "Data Science in Python",
+    issuer: "Aligarh Muslim University (AMU) · 2025",
     icon: "Award"
   },
   {
-    id: "nptel-dl",
-    title: "Deep Learning Fundamentals",
-    issuer: "NPTEL / SWAYAM",
+    id: "iim-dl",
+    title: "Mastering Deep Learning",
+    issuer: "IIM Bombay · 2026",
     icon: "BrainCircuit"
   },
   {
-    id: "azure-ai",
-    title: "Azure AI Fundamentals",
-    issuer: "Microsoft Certified",
-    icon: "CloudCheck"
+    id: "google-capstone",
+    title: "Google Data Capstone",
+    issuer: "Google · 2026",
+    icon: "Award"
   },
   {
-    id: "google-cloud",
-    title: "Cloud Computing Foundations",
-    issuer: "Google Cloud Skills Boost",
-    icon: "Terminal"
-  },
-  {
-    id: "ml-specialization",
-    title: "Machine Learning & Neural Networks",
-    issuer: "Self-Directed & Applied Project Coursework",
+    id: "iit-kgp-dl",
+    title: "Deep Learning for Visual Computing",
+    issuer: "IIT Kharagpur · 2026",
     icon: "Cpu"
-  },
-  {
-    id: "python-backend",
-    title: "FastAPI & Microservices Architecture",
-    issuer: "Production Development & API Engineering",
-    icon: "Layers"
   }
 ];
 
 export const achievements = [
   {
-    id: "civic-tech",
-    title: "Civic Tech Platform Innovation",
-    description: "Designed CVQ, an end-to-end AI-assisted complaint redressal system connecting citizen reports with automated municipal triage."
+    id: "python-challenge",
+    title: "Placed #1 in “Python Challenge”",
+    description: "Secured 1st place in the college-wide competitive Python Challenge held on campus, demonstrating superior algorithmic efficiency and speed."
   },
   {
-    id: "open-source",
-    title: "Open Source Contributor & Builder",
-    description: "Authored 15+ repositories spanning computer vision, agentic AI systems, NLP, and Golang speech tooling under @Ne0Blaze."
+    id: "team-lead-hackathons",
+    title: "Engineering Team Lead (.exe)",
+    description: "Led a 4-person engineering team in agile sprints across 3 competitive hackathons, managing architecture, code quality, and Git workflows."
   },
   {
-    id: "student-360",
-    title: "Productivity Innovation Showcase",
-    description: "Architected Student 360, combining browser extension telemetry with ML focus scoring to combat student digital distraction."
+    id: "cloud-mlops",
+    title: "Full-Lifecycle Cloud MLOps Deployment",
+    description: "Automated end-to-end ML deployment on AWS EKS using Docker and Kubernetes, with live Prometheus/Grafana latency & uptime monitoring."
   }
 ];
