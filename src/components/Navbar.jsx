@@ -113,16 +113,15 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Action Button: Download CV */}
+        {/* Action Button: Resume */}
         <div className="hidden md:flex items-center gap-3">
           <a
             href={profile.resume}
-            download="Ansh_Chourasiya_CV.pdf"
-            className="btn-outline !py-2 !px-4 !text-sm flex items-center gap-1.5 font-semibold"
-            title="Download Ansh Chourasiya's CV"
+            download="Ansh_Chourasiya_Resume.pdf"
+            className="btn-primary !py-2 !px-5 !text-sm font-semibold text-white rounded-xl shadow-[0_4px_14px_-2px_rgba(79,142,247,0.4)]"
+            title="Download Ansh Chourasiya's Resume"
           >
-            <Download className="w-4 h-4 text-accent-primary" />
-            Download CV
+            Resume
           </a>
         </div>
 
@@ -159,11 +158,10 @@ export default function Navbar() {
           <div className="pt-2">
             <a
               href={profile.resume}
-              download="Ansh_Chourasiya_CV.pdf"
-              className="btn-primary w-full !py-2.5 !text-sm font-semibold flex items-center justify-center gap-2"
+              download="Ansh_Chourasiya_Resume.pdf"
+              className="btn-primary w-full !py-2.5 !text-sm font-semibold flex items-center justify-center"
             >
-              <Download className="w-4 h-4" />
-              Download CV
+              Resume
             </a>
           </div>
         </div>
