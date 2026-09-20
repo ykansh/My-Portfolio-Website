@@ -1,0 +1,276 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-base: #f8fafc;
+  --bg-alt: #f0f7ff;
+  --bg-surface: #ffffff;
+  --bg-surface-hover: #f8fafc;
+  --bg-glass: rgba(255, 255, 255, 0.85);
+  --border-light: #e2e8f0;
+  --border-focus: #cbd5e1;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --accent-primary: #4f8ef7;
+  --accent-primary-hover: #3b76d8;
+  --accent-light: #eaf6ff;
+  --accent-mid: #7bb6ff;
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--bg-base);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Base Headings & Links */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+button {
+  cursor: pointer;
+}
+
+/* App container */
+.app {
+  background-color: var(--bg-base);
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Pixel Sky Ambient Background */
+.sky-background {
+  background: linear-gradient(180deg, #cbe7ff 0%, #e2f2ff 45%, var(--bg-base) 100%);
+  height: 250vh;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 0;
+  mask-image: linear-gradient(180deg, #000 80%, rgba(0, 0, 0, 0));
+  -webkit-mask-image: linear-gradient(180deg, #000 80%, rgba(0, 0, 0, 0));
+}
+
+.sky-element {
+  animation-iteration-count: infinite;
+  animation-name: floatRight;
+  animation-timing-function: linear;
+  position: absolute;
+  will-change: transform;
+}
+
+.sky-element--reverse {
+  animation-name: floatLeft;
+}
+
+@keyframes floatRight {
+  0% {
+    transform: translateX(-20vw) scale(var(--scale, 1));
+  }
+  100% {
+    transform: translateX(120vw) scale(var(--scale, 1));
+  }
+}
+
+@keyframes floatLeft {
+  0% {
+    transform: translateX(120vw) scale(var(--scale, 1));
+  }
+  100% {
+    transform: translateX(-20vw) scale(var(--scale, 1));
+  }
+}
+
+.sky-bird-inner {
+  animation: birdBob 3s ease-in-out infinite alternate;
+}
+
+@keyframes birdBob {
+  0% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(8px);
+  }
+}
+
+.sky-particles {
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.sky-particle {
+  animation: driftUp linear infinite;
+  background: #ffffff;
+  border-radius: 2px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  height: 6px;
+  opacity: 0;
+  position: absolute;
+  width: 6px;
+}
+
+@keyframes driftUp {
+  0% {
+    opacity: 0;
+    transform: translateY(0) translateX(0);
+  }
+  20% {
+    opacity: 0.65;
+  }
+  80% {
+    opacity: 0.65;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-22vh) translateX(4vw);
+  }
+}
+
+@keyframes pulse-dot {
+  0% {
+    box-shadow: 0 0 0 0 rgba(79, 142, 247, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 6px rgba(79, 142, 247, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(79, 142, 247, 0);
+  }
+}
+
+.pulse-dot {
+  animation: pulse-dot 2s infinite;
+}
+
+/* Sections backgrounds */
+#home, #about, #skills {
+  background-color: transparent !important;
+  border: none !important;
+}
+
+#experience {
+  background-color: var(--bg-alt);
+  position: relative;
+  z-index: 5;
+}
+
+#projects {
+  background-color: var(--bg-surface);
+  position: relative;
+  z-index: 5;
+}
+
+#education {
+  background-color: var(--bg-alt);
+  position: relative;
+  z-index: 5;
+}
+
+#contact {
+  background-color: var(--bg-surface);
+  border-top: 1px solid var(--border-light);
+  position: relative;
+  z-index: 5;
+}
+
+/* Button utility classes */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: var(--accent-primary);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.8rem 1.8rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 14px -2px rgba(79, 142, 247, 0.4);
+  transition: all var(--transition-fast);
+}
+
+.btn-primary:hover {
+  background: var(--accent-primary-hover);
+  box-shadow: 0 8px 24px -4px rgba(79, 142, 247, 0.5);
+  transform: translateY(-2px);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border-light);
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.8rem 1.8rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: all var(--transition-fast);
+}
+
+.btn-outline:hover {
+  border-color: var(--border-focus);
+  color: var(--accent-primary);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
+}
