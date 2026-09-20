@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Download } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from './Icons';
 import { profile } from '../data/profile';
 
@@ -48,7 +48,7 @@ export default function Hero() {
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5">
               <a
                 href="#projects"
                 onClick={scrollToProjects}
@@ -56,6 +56,16 @@ export default function Hero() {
               >
                 <span>View Projects</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
+
+              <a
+                href={profile.resume}
+                download="Ansh_Chourasiya_CV.pdf"
+                className="btn-outline flex items-center gap-2 font-semibold text-accent-primary hover:text-accent-hover"
+                title="Download original CV"
+              >
+                <Download className="w-4 h-4" />
+                <span>Download CV</span>
               </a>
 
               <a
@@ -96,9 +106,8 @@ export default function Hero() {
                 <img
                   src={profile.photo}
                   alt={profile.name}
-                  className="w-full h-full object-cover rounded-[1.8rem] transition-transform duration-500 ease-out group-hover:scale-105"
+                  className="w-full h-full object-cover object-[68%_25%] rounded-[1.8rem] transition-transform duration-500 ease-out group-hover:scale-105"
                   onError={(e) => {
-                    // Fallback to stylized SVG avatar placeholder if file is ever moved
                     e.target.src = "https://ui-avatars.com/api/?name=Ansh+Chourasiya&background=4F8EF7&color=fff&size=512&bold=true";
                   }}
                 />

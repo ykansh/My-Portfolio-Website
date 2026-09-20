@@ -39,21 +39,3 @@ export const certifications = [
     icon: "Cpu"
   }
 ];
-
-export const achievements = [
-  {
-    id: "python-challenge",
-    title: "Placed #1 in “Python Challenge”",
-    description: "Secured 1st place in the college-wide competitive Python Challenge held on campus, demonstrating superior algorithmic efficiency and speed."
-  },
-  {
-    id: "team-lead-hackathons",
-    title: "Engineering Team Lead (.exe)",
-    description: "Led a 4-person engineering team in agile sprints across 3 competitive hackathons, managing architecture, code quality, and Git workflows."
-  },
-  {
-    id: "cloud-mlops",
-    title: "Full-Lifecycle Cloud MLOps Deployment",
-    description: "Automated end-to-end ML deployment on AWS EKS using Docker and Kubernetes, with live Prometheus/Grafana latency & uptime monitoring."
-  }
-];

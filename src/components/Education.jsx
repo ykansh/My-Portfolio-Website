@@ -10,10 +10,9 @@ import {
   Terminal,
   Cpu,
   Layers,
-  Sparkles,
 } from 'lucide-react';
 import SectionHeader from './SectionHeader';
-import { education, certifications, achievements } from '../data/education';
+import { education, certifications } from '../data/education';
 
 const certIcons = {
   Award: Award,
@@ -124,38 +123,6 @@ export default function Education() {
                 </motion.div>
               );
             })}
-          </div>
-        </div>
-
-        {/* Achievements Section */}
-        <div>
-          <h3 className="text-text-primary text-xl md:text-2xl font-bold tracking-tight mb-8 flex items-center gap-2.5">
-            <Sparkles className="w-5 h-5 text-accent-primary" />
-            <span>Key Achievements & Milestones</span>
-          </h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {achievements.map((item, index) => (
-              <motion.div
-                key={item.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-30px' }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.1,
-                  ease: [0.16, 1, 0.3, 1],
-                }}
-                className="bg-white border border-border-light rounded-2xl p-6 shadow-sm hover:border-accent-mid/60 transition-all duration-200"
-              >
-                <h4 className="text-text-primary font-bold text-lg mb-2">
-                  {item.title}
-                </h4>
-                <p className="text-text-secondary text-sm md:text-base leading-relaxed">
-                  {item.description}
-                </p>
-              </motion.div>
-            ))}
           </div>
         </div>
       </div>

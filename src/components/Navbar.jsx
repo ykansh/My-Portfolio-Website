@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, FileText } from 'lucide-react';
+import { Menu, X, Download } from 'lucide-react';
 import { profile } from '../data/profile';
 
 const navLinks = [
@@ -113,16 +113,16 @@ export default function Navbar() {
           })}
         </nav>
 
-        {/* Action Button: Resume */}
+        {/* Action Button: Download CV */}
         <div className="hidden md:flex items-center gap-3">
           <a
             href={profile.resume}
-            target="_blank"
-            rel="noopener noreferrer"
+            download="Ansh_Chourasiya_CV.pdf"
             className="btn-outline !py-2 !px-4 !text-sm flex items-center gap-1.5 font-semibold"
+            title="Download Ansh Chourasiya's CV"
           >
-            <FileText className="w-4 h-4 text-accent-primary" />
-            Resume
+            <Download className="w-4 h-4 text-accent-primary" />
+            Download CV
           </a>
         </div>
 
@@ -159,12 +159,11 @@ export default function Navbar() {
           <div className="pt-2">
             <a
               href={profile.resume}
-              target="_blank"
-              rel="noopener noreferrer"
+              download="Ansh_Chourasiya_CV.pdf"
               className="btn-primary w-full !py-2.5 !text-sm font-semibold flex items-center justify-center gap-2"
             >
-              <FileText className="w-4 h-4" />
-              View Resume
+              <Download className="w-4 h-4" />
+              Download CV
             </a>
           </div>
         </div>
