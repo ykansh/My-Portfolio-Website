@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Download } from 'lucide-react';
-import { GithubIcon, LinkedinIcon } from './Icons';
+import { ArrowUpRight } from 'lucide-react';
+import { GithubIcon } from './Icons';
 import { profile } from '../data/profile';
 
 export default function Hero() {
@@ -18,7 +18,7 @@ export default function Hero() {
     >
       <div className="max-w-[1200px] mx-auto px-5 md:px-8 w-full z-10">
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-16 items-center">
-          {/* Left Column: Editorial Information */}
+          {/* Left Column: Strictly matching reference typography & layout */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -26,66 +26,45 @@ export default function Hero() {
             className="flex flex-col items-center lg:items-start text-center lg:text-left"
           >
             {/* Status Badge */}
-            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/80 backdrop-blur-md border border-white shadow-sm text-accent-primary text-xs md:text-sm font-bold tracking-wider uppercase mb-6 md:mb-8">
+            <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/80 backdrop-blur-md border border-white shadow-sm text-accent-primary text-xs md:text-sm font-bold tracking-wider uppercase mb-6 md:mb-7">
               <span className="w-2.5 h-2.5 rounded-full bg-accent-primary pulse-dot" />
               <span>{profile.status}</span>
             </div>
 
-            {/* Hero Name */}
-            <h1 className="text-text-primary text-[clamp(3.2rem,6.5vw,5.2rem)] font-extrabold tracking-[-0.04em] leading-[1.08] mb-4">
-              {profile.firstName}{' '}
-              <span className="text-accent-primary">{profile.lastName}</span>
+            {/* Hero Name in Accent Blue */}
+            <h1 className="text-accent-primary text-[clamp(3.3rem,6vw,5.2rem)] font-extrabold tracking-[-0.04em] leading-[1.08] mb-5">
+              {profile.name}
             </h1>
 
-            {/* Subline */}
-            <p className="text-text-muted text-base md:text-lg font-medium mb-5">
-              {profile.subline}
-            </p>
-
-            {/* Intro Positioning Statement */}
-            <p className="text-text-secondary text-lg md:text-xl font-normal leading-relaxed max-w-[620px] mb-8 md:mb-10">
+            {/* Exactly 3-line positioning statement */}
+            <p className="text-text-secondary text-lg md:text-[1.2rem] font-normal leading-[1.65] max-w-[580px] mb-4">
               {profile.tagline}
             </p>
 
-            {/* Action Buttons */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3.5">
+            {/* Subline below description */}
+            <p className="text-text-muted text-base font-medium mb-8 md:mb-10">
+              {profile.subline}
+            </p>
+
+            {/* Strictly two buttons: View Work & GitHub */}
+            <div className="flex items-center justify-center lg:justify-start gap-4">
               <a
                 href="#projects"
                 onClick={scrollToProjects}
-                className="btn-primary group"
+                className="btn-primary group !py-3.5 !px-6"
               >
-                <span>View Projects</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </a>
-
-              <a
-                href={profile.resume}
-                download="Ansh_Chourasiya_CV.pdf"
-                className="btn-outline flex items-center gap-2 font-semibold text-accent-primary hover:text-accent-hover"
-                title="Download original CV"
-              >
-                <Download className="w-4 h-4" />
-                <span>Download CV</span>
+                <span>View Work</span>
+                <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
 
               <a
                 href={profile.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-outline flex items-center gap-2"
+                className="btn-outline flex items-center gap-2.5 !py-3.5 !px-6"
               >
                 <GithubIcon className="w-4 h-4 text-text-primary" />
                 <span>GitHub</span>
-              </a>
-
-              <a
-                href={profile.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-outline flex items-center gap-2"
-              >
-                <LinkedinIcon className="w-4 h-4 text-accent-primary" />
-                <span>LinkedIn</span>
               </a>
             </div>
           </motion.div>

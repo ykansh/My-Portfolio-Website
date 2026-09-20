@@ -3,10 +3,10 @@ export const profile = {
   firstName: "Ansh",
   lastName: "Chourasiya",
   initials: "AC",
-  status: "OPEN TO MLOPS / LLMOPS OPPORTUNITIES",
+  status: "OPEN TO OPPORTUNITIES",
   role: "MLOps | LLMOps | Data Science",
-  subline: "B.Tech CSE · Shivajirao Kadam Institute of Technology & Management · Indore, India",
-  tagline: "Computer Science Engineering student specializing in MLOps, LLMOps, and Data Science. Passionate about building end-to-end machine learning systems—from data preprocessing and model training to automated Kubernetes deployment and Prometheus/Grafana monitoring on AWS.",
+  subline: "3rd-year B.tech. student · CGPA 7.5 · Shivajirao Kadam Institute",
+  tagline: "An MLOps & LLMOps engineer building scalable, intelligent systems that bridge complex AI technology with real-world impact.",
   about: [
     "Hi, I'm Ansh. I'm a Computer Science Engineering student at Shivajirao Kadam Institute of Technology & Management (SKITM) with a deep focus on MLOps, LLMOps, and AI Engineering.",
     "I enjoy building end-to-end machine learning systems, from data preprocessing and model training to cloud deployment and continuous monitoring. Through personal and hackathon projects, I work extensively with Python, FastAPI, Docker, Kubernetes, AWS, MLflow, DVC, LangChain, and LangGraph to build scalable AI applications and automated ML pipelines.",
@@ -21,7 +21,7 @@ export const profile = {
     {
       id: "education",
       icon: "GraduationCap",
-      label: "SKITM · B.Tech CSE"
+      label: "SKITM · CGPA 7.5"
     },
     {
       id: "focus",
