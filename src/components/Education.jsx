@@ -1,15 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import {
-  GraduationCap,
+  BookOpen,
   Calendar,
-  MapPin,
   Award,
   BrainCircuit,
-  CloudCheck,
-  Terminal,
   Cpu,
-  Layers,
 } from 'lucide-react';
 import SectionHeader from './SectionHeader';
 import { education, certifications } from '../data/education';
@@ -17,10 +13,7 @@ import { education, certifications } from '../data/education';
 const certIcons = {
   Award: Award,
   BrainCircuit: BrainCircuit,
-  CloudCheck: CloudCheck || Award,
-  Terminal: Terminal,
   Cpu: Cpu,
-  Layers: Layers,
 };
 
 export default function Education() {
@@ -29,71 +22,56 @@ export default function Education() {
       <div className="max-w-[1200px] mx-auto px-5 md:px-8">
         <SectionHeader eyebrow="ACADEMIC" title="Education & Learning" />
 
-        {/* Primary Education Card */}
+        {/* Primary Education Card - Exact match to reference screenshot */}
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-40px' }}
           transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="bg-white border border-border-light rounded-[1.5rem] p-7 md:p-12 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:border-accent-mid/60 hover:shadow-[0_20px_40px_-10px_rgba(79,142,247,0.12)] transition-all duration-300 flex flex-col md:flex-row gap-6 md:gap-10 items-start mb-16"
+          className="bg-white border border-border-light rounded-[1.5rem] p-7 md:p-12 shadow-[0_10px_30px_rgba(0,0,0,0.03)] hover:border-accent-mid/60 hover:shadow-[0_20px_40px_-10px_rgba(79,142,247,0.12)] transition-all duration-300 flex flex-col md:flex-row gap-6 md:gap-10 items-start mb-14"
         >
-          {/* Degree Icon */}
+          {/* Book Icon Container */}
           <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-accent-light text-accent-primary flex items-center justify-center flex-shrink-0 shadow-sm">
-            <GraduationCap className="w-8 h-8 md:w-10 md:h-10" />
+            <BookOpen className="w-8 h-8 md:w-9 md:h-9" />
           </div>
 
-          {/* Education Details */}
+          {/* Body */}
           <div className="flex-grow w-full">
-            <div className="flex flex-wrap items-center justify-between gap-3 mb-2">
-              <span className="text-accent-primary font-extrabold text-xs md:text-sm tracking-wider uppercase">
+            {/* Degree & CGPA Meta Row */}
+            <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
+              <span className="text-accent-primary font-extrabold text-xs md:text-sm tracking-[0.1em] uppercase">
                 {education.degree}
               </span>
-              <div className="flex items-center gap-1.5 text-text-muted text-sm font-semibold">
-                <Calendar className="w-4 h-4 text-accent-primary" />
-                <span>{education.period}</span>
-              </div>
+              <span className="px-4 py-1.5 rounded-full bg-white border border-border-light text-text-primary text-xs md:text-sm font-bold shadow-sm">
+                {education.gpa}
+              </span>
             </div>
 
-            <h3 className="text-text-primary text-2xl md:text-3xl font-extrabold tracking-tight mb-1">
+            {/* Major */}
+            <h3 className="text-text-primary text-2xl md:text-3xl font-extrabold tracking-tight mb-2">
               {education.major}
             </h3>
-            <p className="text-accent-hover text-base md:text-lg font-semibold mb-2">
-              Specialization: {education.specialization}
+
+            {/* School */}
+            <p className="text-text-secondary text-base md:text-lg font-normal mb-5">
+              {education.school}
             </p>
 
-            <div className="flex items-center gap-2 text-text-secondary text-sm md:text-base font-medium mb-5">
-              <MapPin className="w-4 h-4 text-text-muted" />
-              <span>{education.institution} · {education.location}</span>
+            {/* Period */}
+            <div className="flex items-center gap-2 text-text-muted text-sm md:text-base font-semibold">
+              <Calendar className="w-4 h-4 text-accent-primary" />
+              <span>{education.period}</span>
             </div>
-
-            <p className="text-text-secondary text-base md:text-[1.05rem] leading-relaxed mb-6">
-              {education.description}
-            </p>
-
-            {/* Academic Highlights */}
-            <ul className="flex flex-col gap-2 pt-4 border-t border-border-light/70">
-              {education.highlights.map((h, idx) => (
-                <li
-                  key={idx}
-                  className="text-text-secondary text-sm md:text-base pl-6 relative"
-                >
-                  <span className="absolute left-0 top-0 text-accent-primary font-bold">
-                    ▹
-                  </span>
-                  {h}
-                </li>
-              ))}
-            </ul>
           </div>
         </motion.div>
 
         {/* Certifications Grid */}
-        <div className="mb-16">
+        <div>
           <h3 className="text-text-primary text-xl md:text-2xl font-bold tracking-tight mb-8">
             Certifications & Specialized Learning
           </h3>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
             {certifications.map((cert, index) => {
               const IconComp = certIcons[cert.icon] || Award;
               return (
