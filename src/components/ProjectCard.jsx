@@ -30,13 +30,8 @@ export default function ProjectCard({ project, onSelect, index = 0 }) {
         <h3 className="text-text-primary text-xl md:text-2xl font-bold tracking-tight mb-2 group-hover:text-accent-primary transition-colors">
           {project.title}
         </h3>
-        <p className="text-text-muted text-sm md:text-base font-normal mb-4">
+        <p className="text-text-muted text-sm md:text-base font-normal mb-6 flex-grow">
           {project.subtitle}
-        </p>
-
-        {/* Clamped Description */}
-        <p className="text-text-secondary text-sm md:text-base leading-relaxed line-clamp-3 mb-6 flex-grow">
-          {project.description}
         </p>
 
         {/* Tech tags */}

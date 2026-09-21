@@ -94,8 +94,13 @@ export default function ProjectModal({ project, onClose }) {
                 <h3>Overview</h3>
               </div>
               <p className="text-text-secondary text-base md:text-[1.05rem] leading-[1.75]">
-                {project.overview}
+                {project.description}
               </p>
+              {project.overview && project.overview !== project.description && (
+                <p className="text-text-secondary text-base md:text-[1.05rem] leading-[1.75]">
+                  {project.overview}
+                </p>
+              )}
             </div>
 
             {/* Problem & Solution 2-Column Split */}
