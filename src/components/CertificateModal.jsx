@@ -56,9 +56,17 @@ export default function CertificateModal({ item, onClose }) {
           {/* Modal Header */}
           <div className="bg-bg-alt border-b border-border-light px-6 py-5 md:px-8 md:py-6 flex items-center justify-between gap-4">
             <div className="flex items-center gap-3.5 min-w-0">
-              <div className="w-12 h-12 rounded-xl bg-white border border-border-light shadow-2xs flex items-center justify-center p-2 flex-shrink-0">
+              <div className={`w-12 h-12 rounded-xl flex items-center justify-center p-2 flex-shrink-0 border ${
+                isBadge
+                  ? 'bg-white border-border-light shadow-2xs'
+                  : 'bg-accent-light text-accent-primary border-accent-mid/30'
+              }`}>
                 {logoUrl ? (
-                  <img src={logoUrl} alt={item.title} className="w-8 h-8 object-contain" />
+                  <img
+                    src={logoUrl}
+                    alt={item.title}
+                    className={isBadge ? "w-8 h-8 object-contain" : "w-6 h-6 object-contain"}
+                  />
                 ) : (
                   <Award className="w-6 h-6 text-accent-primary" />
                 )}

@@ -91,16 +91,16 @@ export default function Education() {
                 className="group bg-white border border-border-light rounded-2xl p-5 md:p-6 shadow-sm hover:border-accent-primary hover:shadow-lg hover:-translate-y-1 transition-all duration-200 flex items-center justify-between gap-4 cursor-pointer"
               >
                 <div className="flex items-center gap-3.5 sm:gap-4 min-w-0 flex-grow">
-                  {/* Authentic Logo Container */}
-                  <div className="w-12 h-12 rounded-xl bg-white border border-border-light shadow-2xs group-hover:border-accent-mid/60 group-hover:shadow-sm flex items-center justify-center p-2 flex-shrink-0 transition-all">
+                  {/* Blue Themed Logo Container */}
+                  <div className="w-11 h-11 rounded-xl bg-accent-light text-accent-primary flex items-center justify-center p-2 flex-shrink-0 group-hover:scale-105 transition-transform">
                     {cert.logo ? (
                       <img
                         src={cert.logo}
                         alt={cert.title}
-                        className="w-8 h-8 object-contain group-hover:scale-105 transition-transform"
+                        className="w-6 h-6 object-contain"
                       />
                     ) : (
-                      <Award className="w-6 h-6 text-accent-primary" />
+                      <Award className="w-5 h-5 text-accent-primary" />
                     )}
                   </div>
 

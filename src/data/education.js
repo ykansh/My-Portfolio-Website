@@ -11,7 +11,7 @@ export const certifications = [
     id: "amu-ds",
     title: "Data Science in Python",
     issuer: "Aligarh Muslim University (AMU) · 2025",
-    logo: "/logos/amu.png",
+    logo: "/logos/amu_blue.png",
     fileUrl: "/certificates/dataScience.pdf",
     previewImage: "/certificates/dataScience.png",
     type: "pdf"
@@ -20,7 +20,7 @@ export const certifications = [
     id: "iim-dl",
     title: "Mastering Deep Learning",
     issuer: "IIM Bangalore · 2026",
-    logo: "/logos/iimb.png",
+    logo: "/logos/iimb_blue.png",
     fileUrl: "/certificates/deepLearning.pdf",
     previewImage: "/certificates/deepLearning.png",
     type: "pdf"
@@ -29,7 +29,7 @@ export const certifications = [
     id: "google-capstone",
     title: "Google Data Capstone",
     issuer: "Google · 2026",
-    logo: "/logos/google.svg",
+    logo: "/logos/google_blue.svg",
     fileUrl: "/certificates/google-data-capstone.jpeg",
     previewImage: "/certificates/google-data-capstone.jpeg",
     type: "image"
@@ -38,7 +38,7 @@ export const certifications = [
     id: "iit-kgp-dl",
     title: "Deep Learning for Visual Computing",
     issuer: "IIT Kharagpur · 2026",
-    logo: "/logos/iit_kharagpur.svg",
+    logo: "/logos/iit_kharagpur_blue.svg",
     fileUrl: "/certificates/visualComputing.pdf",
     previewImage: "/certificates/visualComputing.png",
     type: "pdf"
@@ -47,7 +47,7 @@ export const certifications = [
     id: "github-foundations",
     title: "GitHub Foundations",
     issuer: "GitHub Certified · 2026",
-    logo: "/logos/github.svg",
+    logo: "/logos/github_blue.svg",
     fileUrl: "/certificates/github-foundations.pdf",
     previewImage: "/certificates/github-foundations.png",
     type: "pdf"
