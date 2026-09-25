@@ -4,22 +4,12 @@ import {
   BookOpen,
   Calendar,
   Award,
-  BrainCircuit,
-  Cpu,
   ExternalLink,
   Sparkles,
 } from 'lucide-react';
 import SectionHeader from './SectionHeader';
 import { education, certifications, googleBadges } from '../data/education';
 import CertificateModal from './CertificateModal';
-import { GithubIcon } from './Icons';
-
-const certIcons = {
-  Award: Award,
-  BrainCircuit: BrainCircuit,
-  Cpu: Cpu,
-  Github: GithubIcon,
-};
 
 export default function Education() {
   const [selectedItem, setSelectedItem] = useState(null);
@@ -80,48 +70,55 @@ export default function Education() {
                 Certifications & Specialized Learning
               </h3>
               <p className="text-text-muted text-sm mt-1">
-                Click any certificate to view the credential and preview the original document.
+                Click any certificate to view credential details and preview the official document.
               </p>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {certifications.map((cert, index) => {
-              const IconComp = certIcons[cert.icon] || Award;
-              return (
-                <motion.div
-                  key={cert.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-30px' }}
-                  transition={{
-                    duration: 0.5,
-                    delay: index * 0.07,
-                    ease: [0.16, 1, 0.3, 1],
-                  }}
-                  onClick={() => setSelectedItem(cert)}
-                  className="group bg-white border border-border-light rounded-2xl p-5 md:p-6 shadow-sm hover:border-accent-primary hover:shadow-lg hover:-translate-y-1 transition-all duration-200 flex items-center justify-between gap-4 cursor-pointer"
-                >
-                  <div className="flex items-center gap-4 min-w-0">
-                    <div className="w-12 h-12 rounded-xl bg-bg-base border border-border-light group-hover:bg-accent-light group-hover:border-accent-mid/40 flex items-center justify-center text-accent-primary flex-shrink-0 transition-colors">
-                      <IconComp className="w-6 h-6" />
-                    </div>
-                    <div className="min-w-0">
-                      <h4 className="text-text-primary font-bold text-base leading-snug mb-1 group-hover:text-accent-primary transition-colors truncate">
-                        {cert.title}
-                      </h4>
-                      <p className="text-text-secondary text-xs md:text-sm font-medium truncate">
-                        {cert.issuer}
-                      </p>
-                    </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+            {certifications.map((cert, index) => (
+              <motion.div
+                key={cert.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-30px' }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.07,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                onClick={() => setSelectedItem(cert)}
+                className="group bg-white border border-border-light rounded-2xl p-5 md:p-6 shadow-sm hover:border-accent-primary hover:shadow-lg hover:-translate-y-1 transition-all duration-200 flex items-center justify-between gap-4 cursor-pointer"
+              >
+                <div className="flex items-center gap-3.5 sm:gap-4 min-w-0 flex-grow">
+                  {/* Authentic Logo Container */}
+                  <div className="w-12 h-12 rounded-xl bg-white border border-border-light shadow-2xs group-hover:border-accent-mid/60 group-hover:shadow-sm flex items-center justify-center p-2 flex-shrink-0 transition-all">
+                    {cert.logo ? (
+                      <img
+                        src={cert.logo}
+                        alt={cert.title}
+                        className="w-8 h-8 object-contain group-hover:scale-105 transition-transform"
+                      />
+                    ) : (
+                      <Award className="w-6 h-6 text-accent-primary" />
+                    )}
                   </div>
 
-                  <div className="w-8 h-8 rounded-lg bg-bg-base border border-border-light flex items-center justify-center text-text-muted group-hover:text-accent-primary group-hover:bg-accent-light group-hover:border-accent-mid/40 transition-colors flex-shrink-0">
-                    <ExternalLink className="w-4 h-4" />
+                  <div className="min-w-0 flex-grow">
+                    <h4 className="text-text-primary font-bold text-sm sm:text-base leading-snug mb-1 group-hover:text-accent-primary transition-colors line-clamp-1">
+                      {cert.title}
+                    </h4>
+                    <p className="text-text-secondary text-xs sm:text-sm font-medium leading-tight line-clamp-1">
+                      {cert.issuer}
+                    </p>
                   </div>
-                </motion.div>
-              );
-            })}
+                </div>
+
+                <div className="w-8 h-8 rounded-lg bg-bg-base border border-border-light flex items-center justify-center text-text-muted group-hover:text-accent-primary group-hover:bg-accent-light group-hover:border-accent-mid/40 transition-colors flex-shrink-0">
+                  <ExternalLink className="w-4 h-4" />
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
 

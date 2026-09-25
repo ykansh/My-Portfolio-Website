@@ -3,23 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
   X,
   ExternalLink,
-  Download,
   Award,
-  BrainCircuit,
-  Cpu,
-  ShieldCheck,
   ZoomIn,
   CheckCircle2,
 } from 'lucide-react';
-import { GithubIcon } from './Icons';
-
-const iconMap = {
-  Award,
-  BrainCircuit,
-  Cpu,
-  Github: GithubIcon,
-  ShieldCheck,
-};
 
 export default function CertificateModal({ item, onClose }) {
   // Lock body scroll and listen for Escape key
@@ -46,9 +33,9 @@ export default function CertificateModal({ item, onClose }) {
   if (!item) return null;
 
   const isBadge = Boolean(item.badge);
-  const IconComp = iconMap[item.icon] || Award;
   const displayImage = item.previewImage || item.badge;
   const documentUrl = item.fileUrl || item.badge;
+  const logoUrl = item.logo || item.badge;
 
   return (
     <AnimatePresence>
@@ -69,8 +56,12 @@ export default function CertificateModal({ item, onClose }) {
           {/* Modal Header */}
           <div className="bg-bg-alt border-b border-border-light px-6 py-5 md:px-8 md:py-6 flex items-center justify-between gap-4">
             <div className="flex items-center gap-3.5 min-w-0">
-              <div className="w-11 h-11 rounded-xl bg-accent-light text-accent-primary flex items-center justify-center flex-shrink-0 border border-accent-mid/30">
-                <IconComp className="w-5 h-5" />
+              <div className="w-12 h-12 rounded-xl bg-white border border-border-light shadow-2xs flex items-center justify-center p-2 flex-shrink-0">
+                {logoUrl ? (
+                  <img src={logoUrl} alt={item.title} className="w-8 h-8 object-contain" />
+                ) : (
+                  <Award className="w-6 h-6 text-accent-primary" />
+                )}
               </div>
               <div className="min-w-0">
                 <div className="flex items-center gap-2 mb-0.5">
