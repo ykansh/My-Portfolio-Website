@@ -10,25 +10,77 @@ export const certifications = [
   {
     id: "amu-ds",
     title: "Data Science in Python",
-    issuer: "Aligarh Muslim University AMU (2025)",
-    icon: "Award"
+    issuer: "Aligarh Muslim University (AMU) · 2025",
+    icon: "Award",
+    fileUrl: "/certificates/dataScience.pdf",
+    previewImage: "/certificates/dataScience.png",
+    type: "pdf"
   },
   {
     id: "iim-dl",
     title: "Mastering Deep Learning",
-    issuer: "IIM Bombay (2026)",
-    icon: "BrainCircuit"
+    issuer: "IIM Bombay · 2026",
+    icon: "BrainCircuit",
+    fileUrl: "/certificates/deepLearning.pdf",
+    previewImage: "/certificates/deepLearning.png",
+    type: "pdf"
   },
   {
     id: "google-capstone",
     title: "Google Data Capstone",
-    issuer: "Google (2026)",
-    icon: "Award"
+    issuer: "Google · 2026",
+    icon: "Award",
+    fileUrl: "/certificates/google-data-capstone.jpeg",
+    previewImage: "/certificates/google-data-capstone.jpeg",
+    type: "image"
   },
   {
     id: "iit-kgp-dl",
     title: "Deep Learning for Visual Computing",
-    issuer: "IIT Kharagpur (2026)",
-    icon: "Cpu"
+    issuer: "IIT Kharagpur · 2026",
+    icon: "Cpu",
+    fileUrl: "/certificates/visualComputing.pdf",
+    previewImage: "/certificates/visualComputing.png",
+    type: "pdf"
+  },
+  {
+    id: "github-foundations",
+    title: "GitHub Foundations",
+    issuer: "GitHub Certified · 2026",
+    icon: "Github",
+    fileUrl: "/certificates/github-foundations.pdf",
+    previewImage: "/certificates/github-foundations.png",
+    type: "pdf"
+  }
+];
+
+export const googleBadges = [
+  {
+    id: "gcp-compute-basics",
+    title: "The Basics of Google Cloud Compute",
+    issuer: "Google Cloud Skills Boost",
+    badge: "/badges/the-basics-of-google-cloud-compute.png",
+    category: "Cloud Compute"
+  },
+  {
+    id: "gcp-load-balancing-engine",
+    title: "Implement Load Balancing on Compute Engine",
+    issuer: "Google Cloud Skills Boost",
+    badge: "/badges/implement-load-balancing-on-compute-engine.png",
+    category: "Infrastructure & Networking"
+  },
+  {
+    id: "gcp-global-load-balancing",
+    title: "Build Global and Regional Load Balancing Solutions",
+    issuer: "Google Cloud Skills Boost",
+    badge: "/badges/build-global-and-regional-load-balancing-solutions.png",
+    category: "Cloud Architecture"
+  },
+  {
+    id: "gcp-ml-data-prep",
+    title: "Prepare Data for ML APIs on Google Cloud",
+    issuer: "Google Cloud Skills Boost",
+    badge: "/badges/prepare-data-for-ml-apis-on-google-cloud.png",
+    category: "AI & Machine Learning"
   }
 ];
